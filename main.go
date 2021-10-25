@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
-
+	"os"
 	"github.com/gorilla/mux"
 )
 
@@ -98,5 +98,11 @@ func main() {
 	router.HandleFunc("/events/{id}", getOneEvent).Methods("GET")
 	router.HandleFunc("/events/{id}", updateEvent).Methods("PATCH")
 	router.HandleFunc("/events/{id}", deleteEvent).Methods("DELETE")
-	log.Fatal(http.ListenAndServe(":8080", router))
+	
+	port := os.Getenv("PORT)
+	  	if port == "" {
+		    port = "8000"
+	  	}
+	
+	log.Fatal(http.ListenAndServe(":"+port, router))
 }
