@@ -99,7 +99,7 @@ func main() {
 	router.HandleFunc("/events/{id}", updateEvent).Methods("PATCH")
 	router.HandleFunc("/events/{id}", deleteEvent).Methods("DELETE")
 	
-	port := os.Getenv("PORT)
+	port := os.Getenv("PORT")
 	  	if port == "" {
 		    port = "8000"
 	  	}
