@@ -1,4 +1,4 @@
-module go-rest-api
+module go-rest-api-dummy
 
 go 1.16
 
